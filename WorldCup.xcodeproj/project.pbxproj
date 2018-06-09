@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		036B4DD720CB9411003627B1 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 036B4DD620CB9411003627B1 /* CoreDataStack.m */; };
+		036B4DDC20CBBB8C003627B1 /* Team+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 036B4DDA20CBBB8C003627B1 /* Team+CoreDataClass.m */; };
+		036B4DDD20CBBB8C003627B1 /* Team+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 036B4DDB20CBBB8C003627B1 /* Team+CoreDataProperties.m */; };
+		036B4DDF20CBCEAB003627B1 /* seed.json in Resources */ = {isa = PBXBuildFile; fileRef = 036B4DDE20CBCEAB003627B1 /* seed.json */; };
+		036B4DE220CBEC75003627B1 /* TeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 036B4DE120CBEC75003627B1 /* TeamCell.m */; };
 		0391ABD320CB01B300296DE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0391ABD220CB01B300296DE6 /* AppDelegate.m */; };
 		0391ABD620CB01B300296DE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0391ABD520CB01B300296DE6 /* ViewController.m */; };
 		0391ABD920CB01B300296DE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0391ABD720CB01B300296DE6 /* Main.storyboard */; };
@@ -36,6 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		036B4DD520CB9411003627B1 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		036B4DD620CB9411003627B1 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		036B4DD820CBBB8C003627B1 /* Team+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Team+CoreDataProperties.h"; sourceTree = "<group>"; };
+		036B4DD920CBBB8C003627B1 /* Team+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Team+CoreDataClass.h"; sourceTree = "<group>"; };
+		036B4DDA20CBBB8C003627B1 /* Team+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Team+CoreDataClass.m"; sourceTree = "<group>"; };
+		036B4DDB20CBBB8C003627B1 /* Team+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Team+CoreDataProperties.m"; sourceTree = "<group>"; };
+		036B4DDE20CBCEAB003627B1 /* seed.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = seed.json; sourceTree = "<group>"; };
+		036B4DE020CBEC75003627B1 /* TeamCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TeamCell.h; sourceTree = "<group>"; };
+		036B4DE120CBEC75003627B1 /* TeamCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TeamCell.m; sourceTree = "<group>"; };
 		0391ABCE20CB01B200296DE6 /* WorldCup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldCup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0391ABD120CB01B300296DE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0391ABD220CB01B300296DE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,15 +117,24 @@
 		0391ABD020CB01B200296DE6 /* WorldCup */ = {
 			isa = PBXGroup;
 			children = (
+				036B4DD820CBBB8C003627B1 /* Team+CoreDataProperties.h */,
+				036B4DD920CBBB8C003627B1 /* Team+CoreDataClass.h */,
+				036B4DDA20CBBB8C003627B1 /* Team+CoreDataClass.m */,
+				036B4DDB20CBBB8C003627B1 /* Team+CoreDataProperties.m */,
+				036B4DD520CB9411003627B1 /* CoreDataStack.h */,
+				036B4DD620CB9411003627B1 /* CoreDataStack.m */,
 				0391ABD120CB01B300296DE6 /* AppDelegate.h */,
 				0391ABD220CB01B300296DE6 /* AppDelegate.m */,
 				0391ABD420CB01B300296DE6 /* ViewController.h */,
 				0391ABD520CB01B300296DE6 /* ViewController.m */,
+				036B4DE020CBEC75003627B1 /* TeamCell.h */,
+				036B4DE120CBEC75003627B1 /* TeamCell.m */,
 				0391ABD720CB01B300296DE6 /* Main.storyboard */,
 				0391ABDD20CB01B400296DE6 /* Assets.xcassets */,
 				0391ABDF20CB01B400296DE6 /* LaunchScreen.storyboard */,
 				0391ABE220CB01B500296DE6 /* Info.plist */,
 				0391ABE320CB01B500296DE6 /* main.m */,
+				036B4DDE20CBCEAB003627B1 /* seed.json */,
 				0391ABDA20CB01B300296DE6 /* WorldCup.xcdatamodeld */,
 			);
 			path = WorldCup;
@@ -240,6 +263,7 @@
 			files = (
 				0391ABE120CB01B400296DE6 /* LaunchScreen.storyboard in Resources */,
 				0391ABDE20CB01B400296DE6 /* Assets.xcassets in Resources */,
+				036B4DDF20CBCEAB003627B1 /* seed.json in Resources */,
 				0391ABD920CB01B300296DE6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,9 +289,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				036B4DD720CB9411003627B1 /* CoreDataStack.m in Sources */,
 				0391ABD620CB01B300296DE6 /* ViewController.m in Sources */,
 				0391ABDC20CB01B300296DE6 /* WorldCup.xcdatamodeld in Sources */,
 				0391ABE420CB01B500296DE6 /* main.m in Sources */,
+				036B4DE220CBEC75003627B1 /* TeamCell.m in Sources */,
+				036B4DDD20CBBB8C003627B1 /* Team+CoreDataProperties.m in Sources */,
+				036B4DDC20CBBB8C003627B1 /* Team+CoreDataClass.m in Sources */,
 				0391ABD320CB01B300296DE6 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7WH73Q766U;
 				INFOPLIST_FILE = WorldCup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,6 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7WH73Q766U;
 				INFOPLIST_FILE = WorldCup/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
