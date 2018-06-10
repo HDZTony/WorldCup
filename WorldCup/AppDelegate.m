@@ -16,9 +16,10 @@
 
 @implementation AppDelegate
 
-@synthesize coreDataStack = _coreDataStack;
 -(CoreDataStack *)coreDataStack{
-    _coreDataStack = [[CoreDataStack alloc] initWithModelName:@"WorldCup"];
+    if (!_coreDataStack) {
+        _coreDataStack = [[CoreDataStack alloc] initWithModelName:@"WorldCup"];
+    }
     return _coreDataStack;
 }
 
@@ -50,7 +51,6 @@
         NSString *zone = jsonDictonary[@"qualifyingZone"];
         NSString *imageName = jsonDictonary[@"imageName"];
         NSNumber *wins = jsonDictonary[@"wins"];
-        //NSEntityDescription *description = [NSEntityDescription entityForName:@"Team" inManagedObjectContext:self.coreDataStack.managedContext];
         Team *team = [[Team alloc] initWithContext:self.coreDataStack.managedContext];
         team.teamName = teamName;
         team.imageName = imageName;

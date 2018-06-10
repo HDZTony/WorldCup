@@ -30,7 +30,7 @@
         <!--World Cup!-->
         <scene sceneID="nOB-so-Pb8">
             <objects>
-                <viewController id="0Kj-ad-W0S" customClass="ViewController" customModule="WorldCup" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0Kj-ad-W0S" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bnW-ki-c2G"/>
                         <viewControllerLayoutGuide type="bottom" id="wcT-1A-5af"/>
@@ -89,8 +89,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="0Kj-ad-W0S" id="Amj-zT-6St"/>
-                                    <outlet property="delegate" destination="0Kj-ad-W0S" id="NjB-do-o0x"/>
+                                    <outlet property="dataSource" destination="0Kj-ad-W0S" id="sCU-qv-lBT"/>
+                                    <outlet property="delegate" destination="0Kj-ad-W0S" id="uOe-iS-erj"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -107,8 +107,7 @@
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="add" id="DD4-LN-d7j"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="ahI-zh-fgB" id="Qea-17-0LT"/>
-                        <outlet property="tablewView" destination="ahI-zh-fgB" id="djg-Jd-UlN"/>
+                        <outlet property="tableView" destination="ahI-zh-fgB" id="1VY-T8-Yoo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MjV-w4-PnL" userLabel="First Responder" sceneMemberID="firstResponder"/>

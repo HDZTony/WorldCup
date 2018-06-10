@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "CoreDataStack.h"
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) CoreDataStack *coreDataStack;
-@property (weak, nonatomic) IBOutlet UITableView *tablewView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 @end
