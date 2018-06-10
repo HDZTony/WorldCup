@@ -15,8 +15,9 @@
 
 #pragma mark - Core Data stack
 
-//@synthesize persistentContainer = _persistentContainer;
--(NSPersistentContainer *)storeContainer{
+@synthesize persistentContainer = _persistentContainer;
+@synthesize managedContext = _managedContext;
+-(NSPersistentContainer *)persistentContainer{
     @synchronized (self) {
         if (_persistentContainer == nil) {
             _persistentContainer = [[NSPersistentContainer alloc] initWithName:_modelName];
@@ -43,7 +44,7 @@
 }
 -(NSManagedObjectContext *)managedContext{
     if (!_managedContext) {
-        _managedContext = _persistentContainer.viewContext;
+        _managedContext = self.persistentContainer.viewContext;
     }
     return _managedContext;
 }

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Team+CoreDataProperties.h"
+#import "Team+CoreDataClass.h"
 #import "ViewController.h"
 
 @interface AppDelegate ()
@@ -15,6 +15,8 @@
 @end
 
 @implementation AppDelegate
+
+@synthesize coreDataStack = _coreDataStack;
 -(CoreDataStack *)coreDataStack{
     _coreDataStack = [[CoreDataStack alloc] initWithModelName:@"WorldCup"];
     return _coreDataStack;
