@@ -104,9 +104,14 @@
                         <viewLayoutGuide key="safeArea" id="Z7L-Lz-ub8"/>
                     </view>
                     <navigationItem key="navigationItem" title="World Cup!" id="ZHR-2Y-P5b">
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="add" id="DD4-LN-d7j"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="add" id="DD4-LN-d7j">
+                            <connections>
+                                <action selector="addTeam:" destination="0Kj-ad-W0S" id="pfg-XQ-M7a"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="DD4-LN-d7j" id="eOF-Fq-3aP"/>
                         <outlet property="tableView" destination="ahI-zh-fgB" id="1VY-T8-Yoo"/>
                     </connections>
                 </viewController>

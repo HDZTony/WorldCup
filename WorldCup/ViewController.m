@@ -76,10 +76,6 @@ static  NSString *const teamCellIdentifier = @"teamCellReuseIdentifier";
      id<NSFetchedResultsSectionInfo> sectionInfo = self.fetchResultsController.sections[section];
     return sectionInfo.name;
 }
-//“delegate method won’t run until those changes have been saved and merged with the fetched results controller’s context.”
-//-(void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
-//    [self.tableView reloadData];
-//}
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller{
     [self.tableView beginUpdates];
 }
@@ -105,5 +101,46 @@ static  NSString *const teamCellIdentifier = @"teamCellReuseIdentifier";
 }
 -(void)controllerDidChangeContent:(NSFetchedResultsController *)controller{
     [self.tableView endUpdates];
+}
+-(void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type{
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:sectionIndex];
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [self.tableView insertSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+        case NSFetchedResultsChangeDelete:
+            [self.tableView deleteSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+            break;
+    }
+}
+-(void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    if (motion== UIEventSubtypeMotionShake) {
+        [self.addButton setEnabled:YES];
+        
+    }
+}
+- (IBAction)addTeam:(UIBarButtonItem *)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Secret Team" message:@"Add a new team" preferredStyle:UIAlertControllerStyleAlert];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Team name";
+    }];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Qualifying Zone";
+    }];
+    UIAlertAction *save = [UIAlertAction actionWithTitle:@"save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UITextField *nameTextField = alert.textFields.firstObject;
+        UITextField *zoneTextField = alert.textFields.lastObject;
+        if (nameTextField && zoneTextField) {
+            Team *team = [[Team alloc] initWithContext:self.coreDataStack.managedContext];
+            team.teamName = nameTextField.text;
+            team.qualifyingZone = zoneTextField.text;
+            team.imageName = @"wenderland-flag";
+            [self.coreDataStack saveContext];
+        }
+    }];
+    [alert addAction:save];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 @end
